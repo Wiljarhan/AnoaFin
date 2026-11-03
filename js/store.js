@@ -13,21 +13,21 @@
     emergency: {
       id: 'emergency',
       icon: '♡',
-      title: 'Student Emergency Assistance Fund',
+      title: 'Dana Bantuan Darurat Mahasiswa',
       cardDesc: 'Bantuan dana darurat untuk kebutuhan mendesak mahasiswa.',
       formDesc: 'Kebutuhan kesehatan, akademik, atau kondisi mendesak lainnya.'
     },
     ukt: {
       id: 'ukt',
       icon: '▤',
-      title: 'Flexible UKT Installment Plan',
+      title: 'Cicilan UKT Fleksibel',
       cardDesc: 'Pengajuan pembayaran UKT bertahap sesuai kebijakan kampus.',
       formDesc: 'Pengajuan cicilan UKT bertahap sesuai kebijakan kampus.'
     },
     micro: {
       id: 'micro',
       icon: '↗',
-      title: 'Student Micro-Entrepreneurship Financing',
+      title: 'Pembiayaan Mikro-Wirausaha Mahasiswa',
       cardDesc: 'Pembiayaan produktif untuk usaha rintisan mahasiswa.',
       formDesc: 'Modal produktif untuk usaha rintisan mahasiswa.'
     }
@@ -37,18 +37,18 @@
     budgeting: {
       id: 'budgeting',
       icon: '▤',
-      title: 'Smart Budgeting',
+      title: 'Anggaran Cerdas',
       desc: 'Menyusun anggaran mahasiswa',
       points: [
         'Pisahkan pengeluaran menjadi kebutuhan pokok (makan, transportasi, akademik), keinginan (hiburan), dan tabungan.',
-        'Tetapkan batas bulanan per kategori, lalu catat setiap pengeluaran di My Finance.',
+        'Tetapkan batas bulanan per kategori, lalu catat setiap pengeluaran di Keuanganku.',
         'Tinjau sisa anggaran setiap minggu agar tidak kehabisan uang sebelum akhir bulan.'
       ]
     },
     financing: {
       id: 'financing',
       icon: '◈',
-      title: 'Responsible Financing',
+      title: 'Pembiayaan Bertanggung Jawab',
       desc: 'Memahami pembiayaan yang aman',
       points: [
         'Pastikan penyedia layanan legal dan berizin; periksa statusnya di sumber resmi seperti situs OJK.',
@@ -59,7 +59,7 @@
     emergency: {
       id: 'emergency',
       icon: '♧',
-      title: 'Emergency Fund',
+      title: 'Dana Darurat',
       desc: 'Membangun dana darurat',
       points: [
         'Mulai dari nominal kecil tetapi rutin; target awal setara satu bulan pengeluaran pokok.',
@@ -217,11 +217,11 @@
     var weighted = factors.reduce(function (a, f) { return a + f.weight * f.value; }, 0) / 100;
     var score = Math.round(300 + 550 * (weighted / 100) + 1.8 * s.saving.days);
     score = A.clamp(score, 300, 850);
-    var label = 'Needs Improvement';
-    if (score >= 800) label = 'Excellent';
-    else if (score >= 740) label = 'Very Good';
-    else if (score >= 670) label = 'Good';
-    else if (score >= 580) label = 'Fair';
+    var label = 'Perlu Ditingkatkan';
+    if (score >= 800) label = 'Istimewa';
+    else if (score >= 740) label = 'Sangat Baik';
+    else if (score >= 670) label = 'Baik';
+    else if (score >= 580) label = 'Cukup';
     return { score: score, label: label, factors: factors };
   };
 
@@ -234,16 +234,16 @@
 
   calc.badges = function (s) {
     return [
-      { id: 'starter', icon: '🏅', name: 'Smart Starter', desc: 'Menyelesaikan profil finansial', unlocked: true },
+      { id: 'starter', icon: '🏅', name: 'Pemula Cerdas', desc: 'Menyelesaikan profil finansial', unlocked: true },
       {
-        id: 'keeper', icon: '🎯', name: 'Budget Keeper', desc: 'Mencapai target anggaran',
+        id: 'keeper', icon: '🎯', name: 'Penjaga Anggaran', desc: 'Mencapai target anggaran',
         unlocked: calc.expenses(s) > 0 && calc.overCategories(s).length === 0
       },
       {
-        id: 'seeker', icon: '📚', name: 'Knowledge Seeker', desc: 'Menyelesaikan edukasi',
+        id: 'seeker', icon: '📚', name: 'Pencari Ilmu', desc: 'Menyelesaikan edukasi',
         unlocked: calc.modulesDone(s) === Object.keys(MODULES).length && s.quiz.correct
       },
-      { id: 'streak', icon: '🌱', name: 'Saving Streak', desc: 'Menabung konsisten', unlocked: s.saving.days >= 7 }
+      { id: 'streak', icon: '🌱', name: 'Rutin Menabung', desc: 'Menabung konsisten', unlocked: s.saving.days >= 7 }
     ];
   };
 
@@ -268,7 +268,7 @@
         text: 'Pengeluaran lebih besar dari pemasukan yang tercatat.' });
     }
     if (!list.length) {
-      list.push({ level: 'ok', badge: 'Healthy', title: '✓ Kondisi anggaran terkendali',
+      list.push({ level: 'ok', badge: 'Sehat', title: '✓ Kondisi anggaran terkendali',
         text: 'Belum ada indikasi pengeluaran melewati batas anggaran total.' });
     }
     return list;

@@ -3,13 +3,13 @@
   'use strict';
 
   var ROUTES = [
-    { id: 'dashboard', label: 'Dashboard', icon: '⌂' },
-    { id: 'finance', label: 'My Finance', icon: '▤' },
-    { id: 'reputation', label: 'Reputation', icon: '◈' },
-    { id: 'protection', label: 'Protection', icon: '♧' },
-    { id: 'intelligence', label: 'Intelligence', icon: '✧' },
-    { id: 'growth', label: 'Growth', icon: '★' },
-    { id: 'access', label: 'Financial Access', icon: '↗' }
+    { id: 'dashboard', label: 'Dasbor', icon: '⌂' },
+    { id: 'finance', label: 'Keuanganku', icon: '▤' },
+    { id: 'reputation', label: 'Reputasi', icon: '◈' },
+    { id: 'protection', label: 'Proteksi', icon: '♧' },
+    { id: 'intelligence', label: 'Literasi', icon: '✧' },
+    { id: 'growth', label: 'Pertumbuhan', icon: '★' },
+    { id: 'access', label: 'Akses Pembiayaan', icon: '↗' }
   ];
 
   var app = document.getElementById('app');
@@ -45,7 +45,7 @@
     app.innerHTML = page.render(A.store.get());
     page.bind(app);
     markActive(id);
-    var names = { dashboard: 'Dashboard', finance: 'My Finance', reputation: 'ANOA Reputation', protection: 'Financial Protection', intelligence: 'Financial Intelligence', growth: 'Financial Growth', access: 'Financial Access' };
+    var names = { dashboard: 'Dasbor', finance: 'Keuanganku', reputation: 'Reputasi ANOA', protection: 'Proteksi Keuangan', intelligence: 'Literasi Keuangan', growth: 'Pertumbuhan Keuangan', access: 'Akses Pembiayaan' };
     document.title = names[id] + ' · ANOA FIN';
   }
 
