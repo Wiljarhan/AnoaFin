@@ -1,4 +1,4 @@
-/* Halaman Financial Intelligence */
+/* Halaman Literasi Keuangan */
 (function (A) {
   'use strict';
   A.pages = A.pages || {};
@@ -44,16 +44,16 @@
       var done = A.calc.modulesDone(s);
 
       return '' +
-        '<div class="page-head"><div><p class="eyebrow">Financial Knowledge Center</p><h1 class="page-title">Financial Intelligence</h1></div></div>' +
-        '<section class="hero" style="margin-top:0"><div class="eyebrow" style="margin-bottom:12px">Learn · Apply · Improve</div>' +
-          '<h2>Small habits. Stronger future.</h2><p>Pelajari pengelolaan uang, risiko pembiayaan, dan kebiasaan finansial sehat.</p></section>' +
+        '<div class="page-head"><div><p class="eyebrow">Pusat Pengetahuan Keuangan</p><h1 class="page-title">Literasi Keuangan</h1></div></div>' +
+        '<section class="hero" style="margin-top:0"><div class="eyebrow" style="margin-bottom:12px">Pelajari · Terapkan · Tingkatkan</div>' +
+          '<h2>Kebiasaan kecil. Masa depan lebih kuat.</h2><p>Pelajari pengelolaan uang, risiko pembiayaan, dan kebiasaan finansial sehat.</p></section>' +
 
-        '<h2 class="section">Learning Modules</h2>' +
+        '<h2 class="section">Modul Belajar</h2>' +
         '<div class="grid-3">' + mods + '</div>' + panel +
         '<p class="note">Progres modul: ' + done + ' dari 3 selesai.</p>' +
 
-        '<h2 class="section">Knowledge Challenge</h2>' +
-        '<div class="card"><span class="pill">Mini Quiz · 1 Question</span>' +
+        '<h2 class="section">Tantangan Pengetahuan</h2>' +
+        '<div class="card"><span class="pill">Kuis Mini · 1 Soal</span>' +
           '<div class="quiz-q">' + Q.question + '</div>' + options + feedback + '</div>';
     },
 

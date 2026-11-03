@@ -1,4 +1,4 @@
-/* Halaman Financial Protection */
+/* Halaman Proteksi Keuangan */
 (function (A) {
   'use strict';
   A.pages = A.pages || {};
@@ -35,19 +35,19 @@
       }).join('');
 
       return '' +
-        '<div class="page-head"><div><p class="eyebrow">Financial Risk Monitoring</p><h1 class="page-title">Financial Protection</h1></div></div>' +
+        '<div class="page-head"><div><p class="eyebrow">Pemantauan Risiko Keuangan</p><h1 class="page-title">Proteksi Keuangan</h1></div></div>' +
 
-        '<div class="card"><div class="card-head"><h3>Monthly spending monitor</h3><span class="pill' + pillClass(status.key) + '" data-testid="status">' + status.label + '</span></div>' +
+        '<div class="card"><div class="card-head"><h3>Pemantau pengeluaran bulanan</h3><span class="pill' + pillClass(status.key) + '" data-testid="status">' + status.label + '</span></div>' +
           '<div class="monitor-pct" data-testid="used-pct">' + pct + '%</div>' +
           '<div class="bar thick" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + Math.min(pct, 100) + '" aria-label="Pengeluaran bulanan"><i class="' + barCls + '" style="width:' + Math.min(pct, 100) + '%"></i></div>' +
           '<p class="muted" style="margin:12px 0 0;font-size:14px">Pengeluaran dibandingkan dengan total batas anggaran kategori.</p></div>' +
 
-        '<h2 class="section">Smart Alerts</h2>' +
+        '<h2 class="section">Peringatan Cerdas</h2>' +
         '<div class="card">' + alerts +
-          '<div class="alert-block small"><h4>Emergency fund reminder</h4><p>' + reminder + '</p>' +
-          '<a class="btn btn-soft" href="#finance/budget" id="review-budget" style="display:inline-block">Review my budget</a></div></div>' +
+          '<div class="alert-block small"><h4>Pengingat dana darurat</h4><p>' + reminder + '</p>' +
+          '<a class="btn btn-soft" href="#finance/budget" id="review-budget" style="display:inline-block">Tinjau anggaran saya</a></div></div>' +
 
-        '<h2 class="section">Financial Safety Checklist</h2>' +
+        '<h2 class="section">Daftar Periksa Keamanan Finansial</h2>' +
         '<div class="card"><ul class="checklist">' + checklist + '</ul>' +
           '<p class="progress-note" data-testid="check-progress">' + doneCount + ' dari ' + items.length + ' langkah terpenuhi</p></div>';
     },

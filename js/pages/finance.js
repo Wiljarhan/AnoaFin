@@ -1,4 +1,4 @@
-/* Halaman My Finance */
+/* Halaman Keuanganku */
 (function (A) {
   'use strict';
   A.pages = A.pages || {};
@@ -45,37 +45,37 @@
         : '';
 
       return '' +
-        '<div class="page-head"><div><p class="eyebrow">Personal Money Management</p><h1 class="page-title">My Finance</h1></div>' +
+        '<div class="page-head"><div><p class="eyebrow">Pengelolaan Uang Pribadi</p><h1 class="page-title">Keuanganku</h1></div>' +
         '<span class="pill">' + A.esc(s.period) + '</span></div>' +
 
         '<div class="grid-3">' +
-          '<div class="stat"><div class="label">Available Balance</div><div class="value" data-testid="balance">' + A.rp(c.balance(s)) + '</div><div class="sub">Saldo simulasi</div></div>' +
-          '<div class="stat"><div class="label">Total Income</div><div class="value" data-testid="income">' + A.rp(c.income(s)) + '</div><div class="sub">Pemasukan bulan ini</div></div>' +
-          '<div class="stat"><div class="label">Total Expenses</div><div class="value" data-testid="expenses">' + A.rp(c.expenses(s)) + '</div><div class="sub">Pengeluaran bulan ini</div></div>' +
+          '<div class="stat"><div class="label">Saldo Tersedia</div><div class="value" data-testid="balance">' + A.rp(c.balance(s)) + '</div><div class="sub">Saldo simulasi</div></div>' +
+          '<div class="stat"><div class="label">Total Pemasukan</div><div class="value" data-testid="income">' + A.rp(c.income(s)) + '</div><div class="sub">Pemasukan bulan ini</div></div>' +
+          '<div class="stat"><div class="label">Total Pengeluaran</div><div class="value" data-testid="expenses">' + A.rp(c.expenses(s)) + '</div><div class="sub">Pengeluaran bulan ini</div></div>' +
         '</div>' +
 
-        '<h2 class="section">Add Transaction</h2>' +
+        '<h2 class="section">Tambah Transaksi</h2>' +
         '<form class="card" id="tx-form" novalidate>' +
           '<div class="field-row">' +
-            '<div class="field"><label for="tx-type">Transaction type</label><select class="input" id="tx-type">' +
+            '<div class="field"><label for="tx-type">Jenis transaksi</label><select class="input" id="tx-type">' +
               '<option value="expense"' + (form.type === 'expense' ? ' selected' : '') + '>Pengeluaran</option>' +
               '<option value="income"' + (form.type === 'income' ? ' selected' : '') + '>Pemasukan</option></select></div>' +
-            '<div class="field"><label for="tx-cat">Category</label><select class="input" id="tx-cat">' + categoryOptions(form.type, form.category) + '</select></div>' +
+            '<div class="field"><label for="tx-cat">Kategori</label><select class="input" id="tx-cat">' + categoryOptions(form.type, form.category) + '</select></div>' +
           '</div>' +
-          '<div class="field"><label for="tx-name">Transaction name</label><input class="input" id="tx-name" type="text" maxlength="60" placeholder="Contoh: Makan siang" autocomplete="off"></div>' +
-          '<div class="field"><label for="tx-amount">Amount (Rp)</label><input class="input" id="tx-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Contoh: 25000"></div>' +
+          '<div class="field"><label for="tx-name">Nama transaksi</label><input class="input" id="tx-name" type="text" maxlength="60" placeholder="Contoh: Makan siang" autocomplete="off"></div>' +
+          '<div class="field"><label for="tx-amount">Nominal (Rp)</label><input class="input" id="tx-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Contoh: 25000"></div>' +
           '<p class="error" id="tx-error" role="alert"></p>' +
-          '<button class="btn btn-dark" type="submit">+ Save Transaction</button>' +
+          '<button class="btn btn-dark" type="submit">+ Simpan Transaksi</button>' +
         '</form>' +
 
-        '<div class="section-row" id="budget"><h2 class="section">Monthly Budget Allocation</h2>' +
+        '<div class="section-row" id="budget"><h2 class="section">Alokasi Anggaran Bulanan</h2>' +
           (editingBudget ? '' : '<button class="link-btn" type="button" id="budget-edit">Ubah batas</button>') + '</div>' +
         '<div class="card">' + budgetRows(s) +
-          '<div class="total-row"><span>Total budget</span><span data-testid="budget-total">' + A.rp(c.budgetTotal(s)) + '</span></div>' +
+          '<div class="total-row"><span>Total anggaran</span><span data-testid="budget-total">' + A.rp(c.budgetTotal(s)) + '</span></div>' +
           budgetActions +
         '</div>' +
 
-        '<h2 class="section">Transaction History</h2>' +
+        '<h2 class="section">Riwayat Transaksi</h2>' +
         '<div class="card"><ul class="list" id="tx-list">' + history + '</ul></div>';
     },
 
